@@ -1,0 +1,107 @@
+[2026-11-03T20:58:47+08:00] [stdout] [Run] Log file: /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/logs/dpo_20261103_205847_014601_1753384.log
+[2026-11-03T20:58:47+08:00] [stdout] [Run] Python: 3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]; platform: Linux-5.4.0-100-generic-x86_64-with-glibc2.31
+[2026-11-03T20:58:47+08:00] [stdout] [Run] Working directory: /data/chaoni/zzy/ACL-Low/model
+[2026-11-03T20:58:47+08:00] [stdout] [Run] Arguments:
+[2026-11-03T20:58:47+08:00] [stdout] {
+[2026-11-03T20:58:47+08:00] [stdout]   "gpu_id": "5",
+[2026-11-03T20:58:47+08:00] [stdout]   "hf_home": "/data/chaoni/zzy/huggingface",
+[2026-11-03T20:58:47+08:00] [stdout]   "device": "cuda",
+[2026-11-03T20:58:47+08:00] [stdout]   "seed": 42,
+[2026-11-03T20:58:47+08:00] [stdout]   "model_path": "/data/chaoni/zzy/Qwen2.5-7B",
+[2026-11-03T20:58:47+08:00] [stdout]   "data_dir": "/data/chaoni/zzy/ACL-Low/model/data",
+[2026-11-03T20:58:47+08:00] [stdout]   "output_dir": "/data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo",
+[2026-11-03T20:58:47+08:00] [stdout]   "log_dir": null,
+[2026-11-03T20:58:47+08:00] [stdout]   "log_level": "INFO",
+[2026-11-03T20:58:47+08:00] [stdout]   "resume_from_checkpoint": null,
+[2026-11-03T20:58:47+08:00] [stdout]   "trainer_checkpoint": null,
+[2026-11-03T20:58:47+08:00] [stdout]   "dae_files": [
+[2026-11-03T20:58:47+08:00] [stdout]     "dae_objc_train.jsonl"
+[2026-11-03T20:58:47+08:00] [stdout]   ],
+[2026-11-03T20:58:47+08:00] [stdout]   "sft_files": [
+[2026-11-03T20:58:47+08:00] [stdout]     "mr-sft-train.jsonl"
+[2026-11-03T20:58:47+08:00] [stdout]   ],
+[2026-11-03T20:58:47+08:00] [stdout]   "dpo_files": [
+[2026-11-03T20:58:47+08:00] [stdout]     "codenet_dpo_java_train.jsonl"
+[2026-11-03T20:58:47+08:00] [stdout]   ],
+[2026-11-03T20:58:47+08:00] [stdout]   "dae_val_files": [
+[2026-11-03T20:58:47+08:00] [stdout]     "dae_objc_val.jsonl"
+[2026-11-03T20:58:47+08:00] [stdout]   ],
+[2026-11-03T20:58:47+08:00] [stdout]   "sft_val_files": [
+[2026-11-03T20:58:47+08:00] [stdout]     "mr-sft-val.jsonl"
+[2026-11-03T20:58:47+08:00] [stdout]   ],
+[2026-11-03T20:58:47+08:00] [stdout]   "dpo_val_files": [
+[2026-11-03T20:58:47+08:00] [stdout]     "codenet_dpo_java_val.jsonl"
+[2026-11-03T20:58:47+08:00] [stdout]   ],
+[2026-11-03T20:58:47+08:00] [stdout]   "max_seq_length": 2048,
+[2026-11-03T20:58:47+08:00] [stdout]   "dtype": "float16",
+[2026-11-03T20:58:47+08:00] [stdout]   "trust_remote_code": false,
+[2026-11-03T20:58:47+08:00] [stdout]   "lora_r": 8,
+[2026-11-03T20:58:47+08:00] [stdout]   "lora_alpha": 32,
+[2026-11-03T20:58:47+08:00] [stdout]   "lora_dropout": 0.05,
+[2026-11-03T20:58:47+08:00] [stdout]   "target_modules": [
+[2026-11-03T20:58:47+08:00] [stdout]     "q_proj",
+[2026-11-03T20:58:47+08:00] [stdout]     "v_proj"
+[2026-11-03T20:58:47+08:00] [stdout]   ],
+[2026-11-03T20:58:47+08:00] [stdout]   "per_device_train_batch_size": 4,
+[2026-11-03T20:58:47+08:00] [stdout]   "per_device_eval_batch_size": 4,
+[2026-11-03T20:58:47+08:00] [stdout]   "gradient_accumulation_steps": 4,
+[2026-11-03T20:58:47+08:00] [stdout]   "learning_rate": 1e-05,
+[2026-11-03T20:58:47+08:00] [stdout]   "warmup_steps": 100,
+[2026-11-03T20:58:47+08:00] [stdout]   "logging_steps": 10,
+[2026-11-03T20:58:47+08:00] [stdout]   "eval_strategy": "epoch",
+[2026-11-03T20:58:47+08:00] [stdout]   "eval_steps": 100,
+[2026-11-03T20:58:47+08:00] [stdout]   "save_steps": 100,
+[2026-11-03T20:58:47+08:00] [stdout]   "save_total_limit": 2,
+[2026-11-03T20:58:47+08:00] [stdout]   "weight_decay": 0.0,
+[2026-11-03T20:58:47+08:00] [stdout]   "max_grad_norm": 1.0,
+[2026-11-03T20:58:47+08:00] [stdout]   "dataloader_num_workers": 0,
+[2026-11-03T20:58:47+08:00] [stdout]   "gradient_checkpointing": true,
+[2026-11-03T20:58:47+08:00] [stdout]   "dae_epochs": 1,
+[2026-11-03T20:58:47+08:00] [stdout]   "sft_epochs": 1,
+[2026-11-03T20:58:47+08:00] [stdout]   "dpo_epochs": 1,
+[2026-11-03T20:58:47+08:00] [stdout]   "weight_mode": "java_objc_ast",
+[2026-11-03T20:58:47+08:00] [stdout]   "max_references": 4,
+[2026-11-03T20:58:47+08:00] [stdout]   "tau": 2.0,
+[2026-11-03T20:58:47+08:00] [stdout]   "length_normalize": false,
+[2026-11-03T20:58:47+08:00] [stdout]   "dpo_learning_rate": 5e-06,
+[2026-11-03T20:58:47+08:00] [stdout]   "dpo_beta": 0.1,
+[2026-11-03T20:58:47+08:00] [stdout]   "semantic_weight": 1.0,
+[2026-11-03T20:58:47+08:00] [stdout]   "syntax_weight": 0.25,
+[2026-11-03T20:58:47+08:00] [stdout]   "skip_dae": true,
+[2026-11-03T20:58:47+08:00] [stdout]   "skip_sft": true,
+[2026-11-03T20:58:47+08:00] [stdout]   "skip_dpo": false,
+[2026-11-03T20:58:47+08:00] [stdout]   "check_data": false
+[2026-11-03T20:58:47+08:00] [stdout] }
+[2026-11-03T20:58:50+08:00] [stdout] [Environment] torch=2.10.0
+[2026-11-03T20:58:50+08:00] [stdout] [Environment] transformers=4.57.6
+[2026-11-03T20:58:50+08:00] [stdout] [Environment] peft=0.16.0
+[2026-11-03T20:58:50+08:00] [stdout] [Environment] accelerate=1.13.0
+[2026-11-03T20:58:51+08:00] [stdout] [Environment] CUDA_VISIBLE_DEVICES=5; CUDA available=True
+[2026-11-03T20:58:51+08:00] [stdout] [Environment] Visible GPU 0: NVIDIA A800 80GB PCIe; VRAM=79.15 GiB
+[2026-11-03T20:58:52+08:00] [stderr] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-11-03T20:58:52+08:00] [stderr] 
+[2026-11-03T20:58:52+08:00] [stderr] Loading checkpoint shards:   0%|                                             | 0/4 [00:00<?, ?it/s]
+[2026-11-03T20:58:52+08:00] [stderr] Loading checkpoint shards:  25%|█████████▎                           | 1/4 [00:00<00:01,  2.05it/s]
+[2026-11-03T20:58:53+08:00] [stderr] Loading checkpoint shards:  50%|██████████████████▌                  | 2/4 [00:00<00:00,  2.14it/s]
+[2026-11-03T20:58:53+08:00] [stderr] Loading checkpoint shards:  75%|███████████████████████████▊         | 3/4 [00:01<00:00,  2.19it/s]
+[2026-11-03T20:58:53+08:00] [stderr] Loading checkpoint shards: 100%|█████████████████████████████████████| 4/4 [00:01<00:00,  3.14it/s]
+[2026-11-03T20:58:53+08:00] [stderr] Loading checkpoint shards: 100%|█████████████████████████████████████| 4/4 [00:01<00:00,  2.68it/s]
+[2026-11-03T20:59:00+08:00] [stdout] trainable params: 2,523,136 || all params: 7,618,139,648 || trainable%: 0.0331
+[2026-11-03T20:59:00+08:00] [stdout] [Stage] DPO started
+[2026-11-03T20:59:00+08:00] [stdout] [dpo/train] Loading: ['/data/chaoni/zzy/ACL-Low/model/data/codenet_dpo_java_train.jsonl']
+[2026-11-03T20:59:00+08:00] [stderr] 
+[2026-11-03T20:59:00+08:00] [stderr] [Run] FAILED or interrupted
+[2026-11-03T20:59:00+08:00] [stderr] Traceback (most recent call last):
+[2026-11-03T20:59:00+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/run_logging.py", line 77, in run_logging
+[2026-11-03T20:59:00+08:00] [stderr]     yield path
+[2026-11-03T20:59:00+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/train.py", line 9, in main
+[2026-11-03T20:59:00+08:00] [stderr]     run(args)
+[2026-11-03T20:59:00+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/train.py", line 83, in run
+[2026-11-03T20:59:00+08:00] [stderr]     train_dpo(args, model, tokenizer)
+[2026-11-03T20:59:00+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/train_dpo.py", line 62, in train_dpo
+[2026-11-03T20:59:00+08:00] [stderr]     dataset = load_stage_dataset(args, tokenizer, stage)
+[2026-11-03T20:59:00+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/data_loader.py", line 36, in load_stage_dataset
+[2026-11-03T20:59:00+08:00] [stderr]     return prepare(read_rows(paths), stage, data_config(args), tokenizer)
+[2026-11-03T20:59:00+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/data_loader.py", line 43, in read_rows
+[2026-11-03T20:59:00+08:00] [stderr]     with open(path, encoding="utf-8") as handle:
+[2026-11-03T20:59:00+08:00] [stderr] FileNotFoundError: [Errno 2] No such file or directory: '/data/chaoni/zzy/ACL-Low/model/data/codenet_dpo_java_train.jsonl'

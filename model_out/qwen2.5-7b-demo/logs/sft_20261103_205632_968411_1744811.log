@@ -1,0 +1,330 @@
+[2026-11-03T20:56:32+08:00] [stdout] [Run] Log file: /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/logs/sft_20261103_205632_968411_1744811.log
+[2026-11-03T20:56:32+08:00] [stdout] [Run] Python: 3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]; platform: Linux-5.4.0-100-generic-x86_64-with-glibc2.31
+[2026-11-03T20:56:32+08:00] [stdout] [Run] Working directory: /data/chaoni/zzy/ACL-Low/model
+[2026-11-03T20:56:32+08:00] [stdout] [Run] Arguments:
+[2026-11-03T20:56:32+08:00] [stdout] {
+[2026-11-03T20:56:32+08:00] [stdout]   "gpu_id": "5",
+[2026-11-03T20:56:32+08:00] [stdout]   "hf_home": "/data/chaoni/zzy/huggingface",
+[2026-11-03T20:56:32+08:00] [stdout]   "device": "cuda",
+[2026-11-03T20:56:32+08:00] [stdout]   "seed": 42,
+[2026-11-03T20:56:32+08:00] [stdout]   "model_path": "/data/chaoni/zzy/Qwen2.5-7B",
+[2026-11-03T20:56:32+08:00] [stdout]   "data_dir": "/data/chaoni/zzy/ACL-Low/model/data",
+[2026-11-03T20:56:32+08:00] [stdout]   "output_dir": "/data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo",
+[2026-11-03T20:56:32+08:00] [stdout]   "log_dir": null,
+[2026-11-03T20:56:32+08:00] [stdout]   "log_level": "INFO",
+[2026-11-03T20:56:32+08:00] [stdout]   "resume_from_checkpoint": null,
+[2026-11-03T20:56:32+08:00] [stdout]   "trainer_checkpoint": null,
+[2026-11-03T20:56:32+08:00] [stdout]   "dae_files": [
+[2026-11-03T20:56:32+08:00] [stdout]     "dae_objc_train.jsonl"
+[2026-11-03T20:56:32+08:00] [stdout]   ],
+[2026-11-03T20:56:32+08:00] [stdout]   "sft_files": [
+[2026-11-03T20:56:32+08:00] [stdout]     "mr-sft-train.jsonl"
+[2026-11-03T20:56:32+08:00] [stdout]   ],
+[2026-11-03T20:56:32+08:00] [stdout]   "dpo_files": [
+[2026-11-03T20:56:32+08:00] [stdout]     "codenet_dpo_java_train.jsonl"
+[2026-11-03T20:56:32+08:00] [stdout]   ],
+[2026-11-03T20:56:32+08:00] [stdout]   "dae_val_files": [
+[2026-11-03T20:56:32+08:00] [stdout]     "dae_objc_val.jsonl"
+[2026-11-03T20:56:32+08:00] [stdout]   ],
+[2026-11-03T20:56:32+08:00] [stdout]   "sft_val_files": [
+[2026-11-03T20:56:32+08:00] [stdout]     "mr-sft-val.jsonl"
+[2026-11-03T20:56:32+08:00] [stdout]   ],
+[2026-11-03T20:56:32+08:00] [stdout]   "dpo_val_files": [
+[2026-11-03T20:56:32+08:00] [stdout]     "codenet_dpo_java_val.jsonl"
+[2026-11-03T20:56:32+08:00] [stdout]   ],
+[2026-11-03T20:56:32+08:00] [stdout]   "max_seq_length": 2048,
+[2026-11-03T20:56:32+08:00] [stdout]   "dtype": "float16",
+[2026-11-03T20:56:32+08:00] [stdout]   "trust_remote_code": false,
+[2026-11-03T20:56:32+08:00] [stdout]   "lora_r": 8,
+[2026-11-03T20:56:32+08:00] [stdout]   "lora_alpha": 32,
+[2026-11-03T20:56:32+08:00] [stdout]   "lora_dropout": 0.05,
+[2026-11-03T20:56:32+08:00] [stdout]   "target_modules": [
+[2026-11-03T20:56:32+08:00] [stdout]     "q_proj",
+[2026-11-03T20:56:32+08:00] [stdout]     "v_proj"
+[2026-11-03T20:56:32+08:00] [stdout]   ],
+[2026-11-03T20:56:32+08:00] [stdout]   "per_device_train_batch_size": 4,
+[2026-11-03T20:56:32+08:00] [stdout]   "per_device_eval_batch_size": 4,
+[2026-11-03T20:56:32+08:00] [stdout]   "gradient_accumulation_steps": 4,
+[2026-11-03T20:56:32+08:00] [stdout]   "learning_rate": 1e-05,
+[2026-11-03T20:56:32+08:00] [stdout]   "warmup_steps": 100,
+[2026-11-03T20:56:32+08:00] [stdout]   "logging_steps": 10,
+[2026-11-03T20:56:32+08:00] [stdout]   "eval_strategy": "epoch",
+[2026-11-03T20:56:32+08:00] [stdout]   "eval_steps": 100,
+[2026-11-03T20:56:32+08:00] [stdout]   "save_steps": 100,
+[2026-11-03T20:56:32+08:00] [stdout]   "save_total_limit": 2,
+[2026-11-03T20:56:32+08:00] [stdout]   "weight_decay": 0.0,
+[2026-11-03T20:56:32+08:00] [stdout]   "max_grad_norm": 1.0,
+[2026-11-03T20:56:32+08:00] [stdout]   "dataloader_num_workers": 0,
+[2026-11-03T20:56:32+08:00] [stdout]   "gradient_checkpointing": true,
+[2026-11-03T20:56:32+08:00] [stdout]   "dae_epochs": 1,
+[2026-11-03T20:56:32+08:00] [stdout]   "sft_epochs": 1,
+[2026-11-03T20:56:32+08:00] [stdout]   "dpo_epochs": 1,
+[2026-11-03T20:56:32+08:00] [stdout]   "weight_mode": "java_objc_ast",
+[2026-11-03T20:56:32+08:00] [stdout]   "max_references": 4,
+[2026-11-03T20:56:32+08:00] [stdout]   "tau": 2.0,
+[2026-11-03T20:56:32+08:00] [stdout]   "length_normalize": false,
+[2026-11-03T20:56:32+08:00] [stdout]   "dpo_learning_rate": 5e-06,
+[2026-11-03T20:56:32+08:00] [stdout]   "dpo_beta": 0.1,
+[2026-11-03T20:56:32+08:00] [stdout]   "semantic_weight": 1.0,
+[2026-11-03T20:56:32+08:00] [stdout]   "syntax_weight": 0.25,
+[2026-11-03T20:56:32+08:00] [stdout]   "skip_dae": true,
+[2026-11-03T20:56:32+08:00] [stdout]   "skip_sft": false,
+[2026-11-03T20:56:32+08:00] [stdout]   "skip_dpo": true,
+[2026-11-03T20:56:32+08:00] [stdout]   "check_data": false
+[2026-11-03T20:56:32+08:00] [stdout] }
+[2026-11-03T20:56:36+08:00] [stdout] [Environment] torch=2.10.0
+[2026-11-03T20:56:36+08:00] [stdout] [Environment] transformers=4.57.6
+[2026-11-03T20:56:36+08:00] [stdout] [Environment] peft=0.16.0
+[2026-11-03T20:56:36+08:00] [stdout] [Environment] accelerate=1.13.0
+[2026-11-03T20:56:37+08:00] [stdout] [Environment] CUDA_VISIBLE_DEVICES=5; CUDA available=True
+[2026-11-03T20:56:37+08:00] [stdout] [Environment] Visible GPU 0: NVIDIA A800 80GB PCIe; VRAM=79.15 GiB
+[2026-11-03T20:56:38+08:00] [stderr] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-11-03T20:56:38+08:00] [stderr] 
+[2026-11-03T20:56:38+08:00] [stderr] Loading checkpoint shards:   0%|                                             | 0/4 [00:00<?, ?it/s]
+[2026-11-03T20:56:38+08:00] [stderr] Loading checkpoint shards:  25%|█████████▎                           | 1/4 [00:00<00:02,  1.47it/s]
+[2026-11-03T20:56:39+08:00] [stderr] Loading checkpoint shards:  50%|██████████████████▌                  | 2/4 [00:01<00:01,  1.83it/s]
+[2026-11-03T20:56:39+08:00] [stderr] Loading checkpoint shards:  75%|███████████████████████████▊         | 3/4 [00:01<00:00,  1.99it/s]
+[2026-11-03T20:56:39+08:00] [stderr] Loading checkpoint shards: 100%|█████████████████████████████████████| 4/4 [00:01<00:00,  2.90it/s]
+[2026-11-03T20:56:39+08:00] [stderr] Loading checkpoint shards: 100%|█████████████████████████████████████| 4/4 [00:01<00:00,  2.37it/s]
+[2026-11-03T20:56:44+08:00] [stdout] trainable params: 2,523,136 || all params: 7,618,139,648 || trainable%: 0.0331
+[2026-11-03T20:56:44+08:00] [stdout] [Stage] SFT started
+[2026-11-03T20:56:44+08:00] [stdout] [sft/train] Loading: ['/data/chaoni/zzy/ACL-Low/model/data/mr-sft-train.jsonl']
+[2026-11-03T20:56:45+08:00] [stderr] Token indices sequence length is longer than the specified maximum sequence length for this model (4790 > 2048). Running this sequence through the model will result in indexing errors
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=268, label='p00016'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=269, label='p00016'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=270, label='p00016'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=271, label='p00016'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=272, label='p00016'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=273, label='p00016'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=274, label='p00016'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=393, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=394, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=395, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=396, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=397, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=398, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=399, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=400, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=401, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=402, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=403, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=404, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=405, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=406, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=407, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=408, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=409, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=410, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=411, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=412, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=413, label='p00026'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=448, label='p00029'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=449, label='p00029'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=450, label='p00029'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=451, label='p00029'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=452, label='p00029'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=453, label='p00029'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=454, label='p00029'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=455, label='p00029'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=456, label='p00029'
+[2026-11-03T20:56:46+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=457, label='p00029'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=560, label='p00037'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=561, label='p00037'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=562, label='p00037'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=563, label='p00037'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=564, label='p00037'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=565, label='p00037'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=566, label='p00037'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=567, label='p00037'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=568, label='p00037'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=569, label='p00037'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=570, label='p00037'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=612, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=613, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=614, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=615, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=616, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=617, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=618, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=619, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=620, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=621, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=622, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=623, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=624, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=625, label='p00041'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=635, label='p00043'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=636, label='p00043'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=637, label='p00043'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=638, label='p00043'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=639, label='p00043'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=640, label='p00043'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=641, label='p00043'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=660, label='p00046'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=661, label='p00046'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=662, label='p00046'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=663, label='p00046'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=664, label='p00046'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=665, label='p00046'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=666, label='p00046'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=667, label='p00046'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=668, label='p00046'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=767, label='p00055'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=768, label='p00055'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=769, label='p00055'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=770, label='p00055'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=771, label='p00055'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=772, label='p00055'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=773, label='p00055'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=774, label='p00055'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=775, label='p00055'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=776, label='p00055'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=777, label='p00055'
+[2026-11-03T20:56:47+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=778, label='p00055'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=838, label='p00060'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=839, label='p00060'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=840, label='p00060'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=841, label='p00060'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=842, label='p00060'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=843, label='p00060'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=844, label='p00060'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=845, label='p00060'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=886, label='p00065'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=887, label='p00065'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=888, label='p00065'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=889, label='p00065'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=890, label='p00065'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=891, label='p00065'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=892, label='p00065'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=893, label='p00065'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=894, label='p00065'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=895, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=896, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=897, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=898, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=899, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=900, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=901, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=902, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=903, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=904, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=905, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=906, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=907, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=908, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=909, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=910, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=911, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=912, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=913, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=914, label='p00066'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=915, label='p00067'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=916, label='p00067'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=917, label='p00067'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=918, label='p00067'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=919, label='p00067'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=920, label='p00067'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=921, label='p00067'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=922, label='p00067'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=923, label='p00067'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=933, label='p00069'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=934, label='p00069'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=935, label='p00069'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=936, label='p00069'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Tokenize] Kept 801/971 tasks; skipped 29 over max_seq_length=2048; skipped 141 without references.
+[2026-11-03T20:56:48+08:00] [stdout] [sft/val] Loading: ['/data/chaoni/zzy/ACL-Low/model/data/mr-sft-val.jsonl']
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=1, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=2, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=3, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=4, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=5, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=6, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=7, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=8, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=9, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=10, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=11, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=12, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=13, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=14, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=15, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=16, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=17, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=18, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=19, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=20, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=21, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Data] Skipping task: references/output are empty; task_index=22, label='p00000'
+[2026-11-03T20:56:48+08:00] [stdout] [sft/Tokenize] Kept 27/50 tasks; skipped 1 over max_seq_length=2048; skipped 22 without references.
+[2026-11-03T20:56:48+08:00] [stderr] WARNING accelerate.utils.other: [RANK 0] Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+[2026-11-03T20:56:48+08:00] [stderr] Using auto half precision backend
+[2026-11-03T20:56:48+08:00] [stderr] ***** Running training *****
+[2026-11-03T20:56:48+08:00] [stderr]   Num examples = 801
+[2026-11-03T20:56:48+08:00] [stderr]   Num Epochs = 1
+[2026-11-03T20:56:48+08:00] [stderr]   Instantaneous batch size per device = 4
+[2026-11-03T20:56:48+08:00] [stderr]   Total train batch size (w. parallel, distributed & accumulation) = 16
+[2026-11-03T20:56:48+08:00] [stderr]   Gradient Accumulation steps = 4
+[2026-11-03T20:56:48+08:00] [stderr]   Total optimization steps = 51
+[2026-11-03T20:56:48+08:00] [stderr]   Number of trainable parameters = 2,523,136
+[2026-11-03T20:56:48+08:00] [stdout] [sft] Training begins: optimizer_steps=51, epochs=1, output_dir=/data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/sft
+[2026-11-03T20:56:48+08:00] [stderr] 
+[2026-11-03T20:56:48+08:00] [stderr]   0%|                                                                       | 0/51 [00:00<?, ?it/s][sft] Epoch begins: epoch=0, step=0
+[2026-11-03T20:57:06+08:00] [stderr] 
+[2026-11-03T20:57:06+08:00] [stderr]   2%|█▏                                                             | 1/51 [00:17<14:55, 17.92s/it]
+[2026-11-03T20:57:31+08:00] [stderr]   4%|██▍                                                            | 2/51 [00:42<18:01, 22.07s/it]
+[2026-11-03T20:57:44+08:00] [stderr]   6%|███▋                                                           | 3/51 [00:55<14:20, 17.93s/it]
+[2026-11-03T20:58:00+08:00] [stderr] [Run] FAILED or interrupted
+[2026-11-03T20:58:00+08:00] [stderr] Traceback (most recent call last):
+[2026-11-03T20:58:00+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/run_logging.py", line 77, in run_logging
+[2026-11-03T20:58:00+08:00] [stderr]     yield path
+[2026-11-03T20:58:00+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/train.py", line 9, in main
+[2026-11-03T20:58:00+08:00] [stderr]     run(args)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/train.py", line 78, in run
+[2026-11-03T20:58:00+08:00] [stderr]     train_sft(args, model, tokenizer)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/train_sft.py", line 93, in train_sft
+[2026-11-03T20:58:00+08:00] [stderr]     trainer.train(resume_from_checkpoint=resume)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+[2026-11-03T20:58:00+08:00] [stderr]     return inner_training_loop(
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/transformers/trainer.py", line 2674, in _inner_training_loop
+[2026-11-03T20:58:00+08:00] [stderr]     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/transformers/trainer.py", line 4020, in training_step
+[2026-11-03T20:58:00+08:00] [stderr]     loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/train_sft.py", line 16, in compute_loss
+[2026-11-03T20:58:00+08:00] [stderr]     outputs = model(input_ids=inputs['input_ids'], attention_mask=inputs['attention_mask'])
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+[2026-11-03T20:58:00+08:00] [stderr]     return self._call_impl(*args, **kwargs)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+[2026-11-03T20:58:00+08:00] [stderr]     return forward_call(*args, **kwargs)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/accelerate/utils/operations.py", line 823, in forward
+[2026-11-03T20:58:00+08:00] [stderr]     return model_forward(*args, **kwargs)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/accelerate/utils/operations.py", line 811, in __call__
+[2026-11-03T20:58:00+08:00] [stderr]     return convert_to_fp32(self.model_forward(*args, **kwargs))
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+[2026-11-03T20:58:00+08:00] [stderr]     return func(*args, **kwargs)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/peft/peft_model.py", line 1845, in forward
+[2026-11-03T20:58:00+08:00] [stderr]     return self.base_model(
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+[2026-11-03T20:58:00+08:00] [stderr]     return self._call_impl(*args, **kwargs)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+[2026-11-03T20:58:00+08:00] [stderr]     return forward_call(*args, **kwargs)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/peft/tuners/tuners_utils.py", line 216, in forward
+[2026-11-03T20:58:00+08:00] [stderr]     return self.model.forward(*args, **kwargs)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/transformers/utils/generic.py", line 918, in wrapper
+[2026-11-03T20:58:00+08:00] [stderr]     output = func(self, *args, **kwargs)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 449, in forward
+[2026-11-03T20:58:00+08:00] [stderr]     outputs: BaseModelOutputWithPast = self.model(
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+[2026-11-03T20:58:00+08:00] [stderr]     return self._call_impl(*args, **kwargs)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+[2026-11-03T20:58:00+08:00] [stderr]     return forward_call(*args, **kwargs)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/transformers/utils/generic.py", line 1072, in wrapper
+[2026-11-03T20:58:00+08:00] [stderr]     outputs = func(self, *args, **kwargs)
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 372, in forward
+[2026-11-03T20:58:00+08:00] [stderr]     "full_attention": create_causal_mask(**mask_kwargs),
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/transformers/masking_utils.py", line 825, in create_causal_mask
+[2026-11-03T20:58:00+08:00] [stderr]     causal_mask = mask_interface(
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/transformers/masking_utils.py", line 374, in sdpa_mask_recent_torch
+[2026-11-03T20:58:00+08:00] [stderr]     if allow_is_causal_skip and _ignore_causal_mask_sdpa(padding_mask, q_length, kv_length, kv_offset, local_size):
+[2026-11-03T20:58:00+08:00] [stderr]   File "/home/cn/miniconda3/envs/codetrans/lib/python3.10/site-packages/transformers/masking_utils.py", line 255, in _ignore_causal_mask_sdpa
+[2026-11-03T20:58:00+08:00] [stderr]     if not _is_torch_xpu_available or query_length == 1
+[2026-11-03T20:58:00+08:00] [stderr] KeyboardInterrupt

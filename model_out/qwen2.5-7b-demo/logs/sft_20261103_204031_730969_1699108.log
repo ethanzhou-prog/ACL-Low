@@ -1,0 +1,211 @@
+[2026-11-03T20:40:31+08:00] [stdout] [Run] Log file: /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/logs/sft_20261103_204031_730969_1699108.log
+[2026-11-03T20:40:31+08:00] [stdout] [Run] Python: 3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]; platform: Linux-5.4.0-100-generic-x86_64-with-glibc2.31
+[2026-11-03T20:40:31+08:00] [stdout] [Run] Working directory: /data/chaoni/zzy/ACL-Low/model
+[2026-11-03T20:40:31+08:00] [stdout] [Run] Arguments:
+[2026-11-03T20:40:31+08:00] [stdout] {
+[2026-11-03T20:40:31+08:00] [stdout]   "gpu_id": "6",
+[2026-11-03T20:40:31+08:00] [stdout]   "hf_home": "/data/chaoni/zzy/huggingface",
+[2026-11-03T20:40:31+08:00] [stdout]   "device": "cuda",
+[2026-11-03T20:40:31+08:00] [stdout]   "seed": 42,
+[2026-11-03T20:40:31+08:00] [stdout]   "model_path": "/data/chaoni/zzy/Qwen2.5-7B",
+[2026-11-03T20:40:31+08:00] [stdout]   "data_dir": "/data/chaoni/zzy/ACL-Low/model/data",
+[2026-11-03T20:40:31+08:00] [stdout]   "output_dir": "/data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo",
+[2026-11-03T20:40:31+08:00] [stdout]   "log_dir": null,
+[2026-11-03T20:40:31+08:00] [stdout]   "log_level": "INFO",
+[2026-11-03T20:40:31+08:00] [stdout]   "resume_from_checkpoint": null,
+[2026-11-03T20:40:31+08:00] [stdout]   "trainer_checkpoint": null,
+[2026-11-03T20:40:31+08:00] [stdout]   "dae_files": [
+[2026-11-03T20:40:31+08:00] [stdout]     "dae_objc_train.jsonl"
+[2026-11-03T20:40:31+08:00] [stdout]   ],
+[2026-11-03T20:40:31+08:00] [stdout]   "sft_files": [
+[2026-11-03T20:40:31+08:00] [stdout]     "mr-sft-train.jsonl"
+[2026-11-03T20:40:31+08:00] [stdout]   ],
+[2026-11-03T20:40:31+08:00] [stdout]   "dpo_files": [
+[2026-11-03T20:40:31+08:00] [stdout]     "codenet_dpo_java_train.jsonl"
+[2026-11-03T20:40:31+08:00] [stdout]   ],
+[2026-11-03T20:40:31+08:00] [stdout]   "dae_val_files": [
+[2026-11-03T20:40:31+08:00] [stdout]     "dae_objc_val.jsonl"
+[2026-11-03T20:40:31+08:00] [stdout]   ],
+[2026-11-03T20:40:31+08:00] [stdout]   "sft_val_files": [
+[2026-11-03T20:40:31+08:00] [stdout]     "mr-sft-val.jsonl"
+[2026-11-03T20:40:31+08:00] [stdout]   ],
+[2026-11-03T20:40:31+08:00] [stdout]   "dpo_val_files": [
+[2026-11-03T20:40:31+08:00] [stdout]     "codenet_dpo_java_val.jsonl"
+[2026-11-03T20:40:31+08:00] [stdout]   ],
+[2026-11-03T20:40:31+08:00] [stdout]   "max_seq_length": 2048,
+[2026-11-03T20:40:31+08:00] [stdout]   "dtype": "float16",
+[2026-11-03T20:40:31+08:00] [stdout]   "trust_remote_code": false,
+[2026-11-03T20:40:31+08:00] [stdout]   "lora_r": 8,
+[2026-11-03T20:40:31+08:00] [stdout]   "lora_alpha": 32,
+[2026-11-03T20:40:31+08:00] [stdout]   "lora_dropout": 0.05,
+[2026-11-03T20:40:31+08:00] [stdout]   "target_modules": [
+[2026-11-03T20:40:31+08:00] [stdout]     "q_proj",
+[2026-11-03T20:40:31+08:00] [stdout]     "v_proj"
+[2026-11-03T20:40:31+08:00] [stdout]   ],
+[2026-11-03T20:40:31+08:00] [stdout]   "per_device_train_batch_size": 4,
+[2026-11-03T20:40:31+08:00] [stdout]   "per_device_eval_batch_size": 4,
+[2026-11-03T20:40:31+08:00] [stdout]   "gradient_accumulation_steps": 4,
+[2026-11-03T20:40:31+08:00] [stdout]   "learning_rate": 1e-05,
+[2026-11-03T20:40:31+08:00] [stdout]   "warmup_steps": 100,
+[2026-11-03T20:40:31+08:00] [stdout]   "logging_steps": 10,
+[2026-11-03T20:40:31+08:00] [stdout]   "eval_strategy": "epoch",
+[2026-11-03T20:40:31+08:00] [stdout]   "eval_steps": 100,
+[2026-11-03T20:40:31+08:00] [stdout]   "save_steps": 100,
+[2026-11-03T20:40:31+08:00] [stdout]   "save_total_limit": 2,
+[2026-11-03T20:40:31+08:00] [stdout]   "weight_decay": 0.0,
+[2026-11-03T20:40:31+08:00] [stdout]   "max_grad_norm": 1.0,
+[2026-11-03T20:40:31+08:00] [stdout]   "dataloader_num_workers": 0,
+[2026-11-03T20:40:31+08:00] [stdout]   "gradient_checkpointing": true,
+[2026-11-03T20:40:31+08:00] [stdout]   "dae_epochs": 1,
+[2026-11-03T20:40:31+08:00] [stdout]   "sft_epochs": 1,
+[2026-11-03T20:40:31+08:00] [stdout]   "dpo_epochs": 1,
+[2026-11-03T20:40:31+08:00] [stdout]   "weight_mode": "java_objc_ast",
+[2026-11-03T20:40:31+08:00] [stdout]   "max_references": 4,
+[2026-11-03T20:40:31+08:00] [stdout]   "tau": 2.0,
+[2026-11-03T20:40:31+08:00] [stdout]   "length_normalize": false,
+[2026-11-03T20:40:31+08:00] [stdout]   "dpo_learning_rate": 5e-06,
+[2026-11-03T20:40:31+08:00] [stdout]   "dpo_beta": 0.1,
+[2026-11-03T20:40:31+08:00] [stdout]   "semantic_weight": 1.0,
+[2026-11-03T20:40:31+08:00] [stdout]   "syntax_weight": 0.25,
+[2026-11-03T20:40:31+08:00] [stdout]   "skip_dae": true,
+[2026-11-03T20:40:31+08:00] [stdout]   "skip_sft": false,
+[2026-11-03T20:40:31+08:00] [stdout]   "skip_dpo": true,
+[2026-11-03T20:40:31+08:00] [stdout]   "check_data": false
+[2026-11-03T20:40:31+08:00] [stdout] }
+[2026-11-03T20:40:35+08:00] [stdout] [Environment] torch=2.10.0
+[2026-11-03T20:40:35+08:00] [stdout] [Environment] transformers=4.57.6
+[2026-11-03T20:40:35+08:00] [stdout] [Environment] peft=0.16.0
+[2026-11-03T20:40:35+08:00] [stdout] [Environment] accelerate=1.13.0
+[2026-11-03T20:40:36+08:00] [stdout] [Environment] CUDA_VISIBLE_DEVICES=6; CUDA available=True
+[2026-11-03T20:40:36+08:00] [stdout] [Environment] Visible GPU 0: NVIDIA A800 80GB PCIe; VRAM=79.15 GiB
+[2026-11-03T20:40:36+08:00] [stderr] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-11-03T20:40:36+08:00] [stderr] 
+[2026-11-03T20:40:36+08:00] [stderr] Loading checkpoint shards:   0%|                                                                                                                                                           | 0/4 [00:00<?, ?it/s]
+[2026-11-03T20:40:37+08:00] [stderr] Loading checkpoint shards:  25%|████████████████████████████████████▊                                                                                                              | 1/4 [00:00<00:01,  1.56it/s]
+[2026-11-03T20:40:38+08:00] [stderr] Loading checkpoint shards:  50%|█████████████████████████████████████████████████████████████████████████▌                                                                         | 2/4 [00:01<00:01,  1.86it/s]
+[2026-11-03T20:40:38+08:00] [stderr] Loading checkpoint shards:  75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                    | 3/4 [00:01<00:00,  2.11it/s]
+[2026-11-03T20:40:38+08:00] [stderr] Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:01<00:00,  3.03it/s]
+[2026-11-03T20:40:38+08:00] [stderr] Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:01<00:00,  2.48it/s]
+[2026-11-03T20:40:47+08:00] [stdout] trainable params: 2,523,136 || all params: 7,618,139,648 || trainable%: 0.0331
+[2026-11-03T20:40:47+08:00] [stdout] [Stage] SFT started
+[2026-11-03T20:40:47+08:00] [stdout] [sft/train] Loading: ['/data/chaoni/zzy/ACL-Low/model/data/mr-sft-train.jsonl']
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=1, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=2, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=3, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=4, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=5, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=6, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=7, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=8, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=9, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=10, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=11, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=12, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=13, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=14, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=15, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=16, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=17, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=18, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=19, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=20, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=21, label='p00000'
+[2026-11-03T20:40:47+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=22, label='p00000'
+[2026-11-03T20:40:47+08:00] [stderr] Token indices sequence length is longer than the specified maximum sequence length for this model (4790 > 2048). Running this sequence through the model will result in indexing errors
+[2026-11-03T20:40:48+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=297, label='p00016'
+[2026-11-03T20:40:48+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=298, label='p00016'
+[2026-11-03T20:40:48+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=299, label='p00016'
+[2026-11-03T20:40:48+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=300, label='p00016'
+[2026-11-03T20:40:48+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=301, label='p00016'
+[2026-11-03T20:40:48+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=302, label='p00016'
+[2026-11-03T20:40:48+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=303, label='p00016'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=422, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=423, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=424, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=425, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=426, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=427, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=428, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=429, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=430, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=431, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=432, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=433, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=434, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=435, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=436, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=437, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=438, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=439, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=440, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=441, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=442, label='p00026'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=477, label='p00029'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=478, label='p00029'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=479, label='p00029'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=480, label='p00029'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=481, label='p00029'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=482, label='p00029'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=483, label='p00029'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=484, label='p00029'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=485, label='p00029'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=486, label='p00029'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=589, label='p00037'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=590, label='p00037'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=591, label='p00037'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=592, label='p00037'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=593, label='p00037'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=594, label='p00037'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=595, label='p00037'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=596, label='p00037'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=597, label='p00037'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=598, label='p00037'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=599, label='p00037'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=641, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=642, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=643, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=644, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=645, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=646, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=647, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=648, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=649, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=650, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=651, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=652, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=653, label='p00041'
+[2026-11-03T20:40:49+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=654, label='p00041'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=664, label='p00043'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=665, label='p00043'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=666, label='p00043'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=667, label='p00043'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=668, label='p00043'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=669, label='p00043'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=670, label='p00043'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=689, label='p00046'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=690, label='p00046'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=691, label='p00046'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=692, label='p00046'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=693, label='p00046'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=694, label='p00046'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=695, label='p00046'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=696, label='p00046'
+[2026-11-03T20:40:50+08:00] [stdout] [sft/Data] Skipping task without positive references: task_index=697, label='p00046'
+[2026-11-03T20:40:50+08:00] [stderr] 
+[2026-11-03T20:40:50+08:00] [stderr] [Run] FAILED or interrupted
+[2026-11-03T20:40:50+08:00] [stderr] Traceback (most recent call last):
+[2026-11-03T20:40:50+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/run_logging.py", line 77, in run_logging
+[2026-11-03T20:40:50+08:00] [stderr]     yield path
+[2026-11-03T20:40:50+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/train.py", line 9, in main
+[2026-11-03T20:40:50+08:00] [stderr]     run(args)
+[2026-11-03T20:40:50+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/train.py", line 78, in run
+[2026-11-03T20:40:50+08:00] [stderr]     train_sft(args, model, tokenizer)
+[2026-11-03T20:40:50+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/train_sft.py", line 54, in train_sft
+[2026-11-03T20:40:50+08:00] [stderr]     dataset = load_stage_dataset(args, tokenizer, stage)
+[2026-11-03T20:40:50+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/data_loader.py", line 22, in load_stage_dataset
+[2026-11-03T20:40:50+08:00] [stderr]     return prepare(read_rows(paths), stage, data_config(args), tokenizer)
+[2026-11-03T20:40:50+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/data_loader.py", line 100, in prepare
+[2026-11-03T20:40:50+08:00] [stderr]     refs = select_references(row['references'], cfg['sft'])
+[2026-11-03T20:40:50+08:00] [stderr]   File "/data/chaoni/zzy/ACL-Low/model/data_loader.py", line 60, in select_references
+[2026-11-03T20:40:50+08:00] [stderr]     raise ValueError('Positive contains AST errors')
+[2026-11-03T20:40:50+08:00] [stderr] ValueError: Positive contains AST errors

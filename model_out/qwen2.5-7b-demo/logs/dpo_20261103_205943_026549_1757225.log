@@ -1,0 +1,260 @@
+[2026-11-03T20:59:43+08:00] [stdout] [Run] Log file: /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/logs/dpo_20261103_205943_026549_1757225.log
+[2026-11-03T20:59:43+08:00] [stdout] [Run] Python: 3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]; platform: Linux-5.4.0-100-generic-x86_64-with-glibc2.31
+[2026-11-03T20:59:43+08:00] [stdout] [Run] Working directory: /data/chaoni/zzy/ACL-Low/model
+[2026-11-03T20:59:43+08:00] [stdout] [Run] Arguments:
+[2026-11-03T20:59:43+08:00] [stdout] {
+[2026-11-03T20:59:43+08:00] [stdout]   "gpu_id": "5",
+[2026-11-03T20:59:43+08:00] [stdout]   "hf_home": "/data/chaoni/zzy/huggingface",
+[2026-11-03T20:59:43+08:00] [stdout]   "device": "cuda",
+[2026-11-03T20:59:43+08:00] [stdout]   "seed": 42,
+[2026-11-03T20:59:43+08:00] [stdout]   "model_path": "/data/chaoni/zzy/Qwen2.5-7B",
+[2026-11-03T20:59:43+08:00] [stdout]   "data_dir": "/data/chaoni/zzy/ACL-Low/model/data",
+[2026-11-03T20:59:43+08:00] [stdout]   "output_dir": "/data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo",
+[2026-11-03T20:59:43+08:00] [stdout]   "log_dir": null,
+[2026-11-03T20:59:43+08:00] [stdout]   "log_level": "INFO",
+[2026-11-03T20:59:43+08:00] [stdout]   "resume_from_checkpoint": null,
+[2026-11-03T20:59:43+08:00] [stdout]   "trainer_checkpoint": null,
+[2026-11-03T20:59:43+08:00] [stdout]   "dae_files": [
+[2026-11-03T20:59:43+08:00] [stdout]     "dae_objc_train.jsonl"
+[2026-11-03T20:59:43+08:00] [stdout]   ],
+[2026-11-03T20:59:43+08:00] [stdout]   "sft_files": [
+[2026-11-03T20:59:43+08:00] [stdout]     "mr-sft-train.jsonl"
+[2026-11-03T20:59:43+08:00] [stdout]   ],
+[2026-11-03T20:59:43+08:00] [stdout]   "dpo_files": [
+[2026-11-03T20:59:43+08:00] [stdout]     "dpo-objc-train.jsonl"
+[2026-11-03T20:59:43+08:00] [stdout]   ],
+[2026-11-03T20:59:43+08:00] [stdout]   "dae_val_files": [
+[2026-11-03T20:59:43+08:00] [stdout]     "dae_objc_val.jsonl"
+[2026-11-03T20:59:43+08:00] [stdout]   ],
+[2026-11-03T20:59:43+08:00] [stdout]   "sft_val_files": [
+[2026-11-03T20:59:43+08:00] [stdout]     "mr-sft-val.jsonl"
+[2026-11-03T20:59:43+08:00] [stdout]   ],
+[2026-11-03T20:59:43+08:00] [stdout]   "dpo_val_files": [
+[2026-11-03T20:59:43+08:00] [stdout]     "dpo-objc-train.jsonl"
+[2026-11-03T20:59:43+08:00] [stdout]   ],
+[2026-11-03T20:59:43+08:00] [stdout]   "max_seq_length": 2048,
+[2026-11-03T20:59:43+08:00] [stdout]   "dtype": "float16",
+[2026-11-03T20:59:43+08:00] [stdout]   "trust_remote_code": false,
+[2026-11-03T20:59:43+08:00] [stdout]   "lora_r": 8,
+[2026-11-03T20:59:43+08:00] [stdout]   "lora_alpha": 32,
+[2026-11-03T20:59:43+08:00] [stdout]   "lora_dropout": 0.05,
+[2026-11-03T20:59:43+08:00] [stdout]   "target_modules": [
+[2026-11-03T20:59:43+08:00] [stdout]     "q_proj",
+[2026-11-03T20:59:43+08:00] [stdout]     "v_proj"
+[2026-11-03T20:59:43+08:00] [stdout]   ],
+[2026-11-03T20:59:43+08:00] [stdout]   "per_device_train_batch_size": 4,
+[2026-11-03T20:59:43+08:00] [stdout]   "per_device_eval_batch_size": 4,
+[2026-11-03T20:59:43+08:00] [stdout]   "gradient_accumulation_steps": 4,
+[2026-11-03T20:59:43+08:00] [stdout]   "learning_rate": 1e-05,
+[2026-11-03T20:59:43+08:00] [stdout]   "warmup_steps": 100,
+[2026-11-03T20:59:43+08:00] [stdout]   "logging_steps": 10,
+[2026-11-03T20:59:43+08:00] [stdout]   "eval_strategy": "epoch",
+[2026-11-03T20:59:43+08:00] [stdout]   "eval_steps": 100,
+[2026-11-03T20:59:43+08:00] [stdout]   "save_steps": 100,
+[2026-11-03T20:59:43+08:00] [stdout]   "save_total_limit": 2,
+[2026-11-03T20:59:43+08:00] [stdout]   "weight_decay": 0.0,
+[2026-11-03T20:59:43+08:00] [stdout]   "max_grad_norm": 1.0,
+[2026-11-03T20:59:43+08:00] [stdout]   "dataloader_num_workers": 0,
+[2026-11-03T20:59:43+08:00] [stdout]   "gradient_checkpointing": true,
+[2026-11-03T20:59:43+08:00] [stdout]   "dae_epochs": 1,
+[2026-11-03T20:59:43+08:00] [stdout]   "sft_epochs": 1,
+[2026-11-03T20:59:43+08:00] [stdout]   "dpo_epochs": 1,
+[2026-11-03T20:59:43+08:00] [stdout]   "weight_mode": "java_objc_ast",
+[2026-11-03T20:59:43+08:00] [stdout]   "max_references": 4,
+[2026-11-03T20:59:43+08:00] [stdout]   "tau": 2.0,
+[2026-11-03T20:59:43+08:00] [stdout]   "length_normalize": false,
+[2026-11-03T20:59:43+08:00] [stdout]   "dpo_learning_rate": 5e-06,
+[2026-11-03T20:59:43+08:00] [stdout]   "dpo_beta": 0.1,
+[2026-11-03T20:59:43+08:00] [stdout]   "semantic_weight": 1.0,
+[2026-11-03T20:59:43+08:00] [stdout]   "syntax_weight": 0.25,
+[2026-11-03T20:59:43+08:00] [stdout]   "skip_dae": true,
+[2026-11-03T20:59:43+08:00] [stdout]   "skip_sft": true,
+[2026-11-03T20:59:43+08:00] [stdout]   "skip_dpo": false,
+[2026-11-03T20:59:43+08:00] [stdout]   "check_data": false
+[2026-11-03T20:59:43+08:00] [stdout] }
+[2026-11-03T20:59:46+08:00] [stdout] [Environment] torch=2.10.0
+[2026-11-03T20:59:46+08:00] [stdout] [Environment] transformers=4.57.6
+[2026-11-03T20:59:46+08:00] [stdout] [Environment] peft=0.16.0
+[2026-11-03T20:59:46+08:00] [stdout] [Environment] accelerate=1.13.0
+[2026-11-03T20:59:47+08:00] [stdout] [Environment] CUDA_VISIBLE_DEVICES=5; CUDA available=True
+[2026-11-03T20:59:47+08:00] [stdout] [Environment] Visible GPU 0: NVIDIA A800 80GB PCIe; VRAM=79.15 GiB
+[2026-11-03T20:59:48+08:00] [stderr] `torch_dtype` is deprecated! Use `dtype` instead!
+[2026-11-03T20:59:48+08:00] [stderr] 
+[2026-11-03T20:59:48+08:00] [stderr] Loading checkpoint shards:   0%|                                             | 0/4 [00:00<?, ?it/s]
+[2026-11-03T20:59:48+08:00] [stderr] Loading checkpoint shards:  25%|█████████▎                           | 1/4 [00:00<00:01,  2.07it/s]
+[2026-11-03T20:59:49+08:00] [stderr] Loading checkpoint shards:  50%|██████████████████▌                  | 2/4 [00:00<00:00,  2.19it/s]
+[2026-11-03T20:59:49+08:00] [stderr] Loading checkpoint shards:  75%|███████████████████████████▊         | 3/4 [00:01<00:00,  2.33it/s]
+[2026-11-03T20:59:49+08:00] [stderr] Loading checkpoint shards: 100%|█████████████████████████████████████| 4/4 [00:01<00:00,  2.83it/s]
+[2026-11-03T20:59:57+08:00] [stdout] trainable params: 2,523,136 || all params: 7,618,139,648 || trainable%: 0.0331
+[2026-11-03T20:59:57+08:00] [stdout] [Stage] DPO started
+[2026-11-03T20:59:57+08:00] [stdout] [dpo/train] Loading: ['/data/chaoni/zzy/ACL-Low/model/data/dpo-objc-train.jsonl']
+[2026-11-03T20:59:57+08:00] [stdout] [dpo/Tokenize] Kept 1/1 tasks; skipped 0 over max_seq_length=2048; skipped 0 without references.
+[2026-11-03T20:59:57+08:00] [stdout] [dpo/val] Loading: ['/data/chaoni/zzy/ACL-Low/model/data/dpo-objc-train.jsonl']
+[2026-11-03T20:59:57+08:00] [stdout] [dpo/Tokenize] Kept 1/1 tasks; skipped 0 over max_seq_length=2048; skipped 0 without references.
+[2026-11-03T20:59:57+08:00] [stdout] [dpo/train] Reference cache: /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo/reference_logps.pt; pairs=1; resume=False
+[2026-11-03T20:59:58+08:00] [stdout] [dpo/train] Reference cache saved: /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo/reference_logps.pt
+[2026-11-03T20:59:58+08:00] [stdout] [dpo/val] Reference cache: /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo/val_reference_logps.pt; pairs=1; resume=False
+[2026-11-03T20:59:58+08:00] [stdout] [dpo/val] Reference cache saved: /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo/val_reference_logps.pt
+[2026-11-03T20:59:58+08:00] [stderr] WARNING accelerate.utils.other: [RANK 0] Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+[2026-11-03T20:59:58+08:00] [stderr] Using auto half precision backend
+[2026-11-03T20:59:58+08:00] [stderr] ***** Running training *****
+[2026-11-03T20:59:58+08:00] [stderr]   Num examples = 1
+[2026-11-03T20:59:58+08:00] [stderr]   Num Epochs = 1
+[2026-11-03T20:59:58+08:00] [stderr]   Instantaneous batch size per device = 4
+[2026-11-03T20:59:58+08:00] [stderr]   Total train batch size (w. parallel, distributed & accumulation) = 16
+[2026-11-03T20:59:58+08:00] [stderr]   Gradient Accumulation steps = 4
+[2026-11-03T20:59:58+08:00] [stderr]   Total optimization steps = 1
+[2026-11-03T20:59:58+08:00] [stderr]   Number of trainable parameters = 2,523,136
+[2026-11-03T20:59:58+08:00] [stdout] [dpo] Training begins: optimizer_steps=1, epochs=1, output_dir=/data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo
+[2026-11-03T20:59:58+08:00] [stderr] 
+[2026-11-03T20:59:58+08:00] [stderr]   0%|                                                                        | 0/1 [00:00<?, ?it/s][dpo] Epoch begins: epoch=0, step=0
+[2026-11-03T20:59:59+08:00] [stderr] 
+[2026-11-03T20:59:59+08:00] [stderr] 100%|████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.33it/s]Saving model checkpoint to /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo/checkpoint-1
+[2026-11-03T20:59:59+08:00] [stderr] loading configuration file /data/chaoni/zzy/Qwen2.5-7B/config.json
+[2026-11-03T20:59:59+08:00] [stderr] Model config Qwen2Config {
+[2026-11-03T20:59:59+08:00] [stderr]   "architectures": [
+[2026-11-03T20:59:59+08:00] [stderr]     "Qwen2ForCausalLM"
+[2026-11-03T20:59:59+08:00] [stderr]   ],
+[2026-11-03T20:59:59+08:00] [stderr]   "attention_dropout": 0.0,
+[2026-11-03T20:59:59+08:00] [stderr]   "bos_token_id": 151643,
+[2026-11-03T20:59:59+08:00] [stderr]   "dtype": "bfloat16",
+[2026-11-03T20:59:59+08:00] [stderr]   "eos_token_id": 151643,
+[2026-11-03T20:59:59+08:00] [stderr]   "hidden_act": "silu",
+[2026-11-03T20:59:59+08:00] [stderr]   "hidden_size": 3584,
+[2026-11-03T20:59:59+08:00] [stderr]   "initializer_range": 0.02,
+[2026-11-03T20:59:59+08:00] [stderr]   "intermediate_size": 18944,
+[2026-11-03T20:59:59+08:00] [stderr]   "layer_types": [
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention",
+[2026-11-03T20:59:59+08:00] [stderr]     "full_attention"
+[2026-11-03T20:59:59+08:00] [stderr]   ],
+[2026-11-03T20:59:59+08:00] [stderr]   "max_position_embeddings": 32768,
+[2026-11-03T20:59:59+08:00] [stderr]   "max_window_layers": 28,
+[2026-11-03T20:59:59+08:00] [stderr]   "model_type": "qwen2",
+[2026-11-03T20:59:59+08:00] [stderr]   "num_attention_heads": 28,
+[2026-11-03T20:59:59+08:00] [stderr]   "num_hidden_layers": 28,
+[2026-11-03T20:59:59+08:00] [stderr]   "num_key_value_heads": 4,
+[2026-11-03T20:59:59+08:00] [stderr]   "rms_norm_eps": 1e-06,
+[2026-11-03T20:59:59+08:00] [stderr]   "rope_scaling": null,
+[2026-11-03T20:59:59+08:00] [stderr]   "rope_theta": 1000000.0,
+[2026-11-03T20:59:59+08:00] [stderr]   "sliding_window": null,
+[2026-11-03T20:59:59+08:00] [stderr]   "tie_word_embeddings": false,
+[2026-11-03T20:59:59+08:00] [stderr]   "transformers_version": "4.57.6",
+[2026-11-03T20:59:59+08:00] [stderr]   "use_cache": true,
+[2026-11-03T20:59:59+08:00] [stderr]   "use_sliding_window": false,
+[2026-11-03T20:59:59+08:00] [stderr]   "vocab_size": 152064
+[2026-11-03T20:59:59+08:00] [stderr] }
+[2026-11-03T20:59:59+08:00] [stderr] 
+[2026-11-03T20:59:59+08:00] [stdout] [dpo] Checkpoint saved: /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo/checkpoint-1
+[2026-11-03T20:59:59+08:00] [stdout] [dpo] Epoch ends: epoch=1.0, step=1
+[2026-11-03T20:59:59+08:00] [stdout] [Metrics] {"eval_loss": 0.6931471824645996, "eval_runtime": 0.2512, "eval_samples_per_second": 3.98, "eval_steps_per_second": 3.98, "epoch": 1.0, "stage": "dpo", "step": 1}
+[2026-11-03T20:59:59+08:00] [stderr] 
+[2026-11-03T20:59:59+08:00] [stderr]                                                                                                    
+[2026-11-03T20:59:59+08:00] [stdout] {'eval_loss': 0.6931471824645996, 'eval_runtime': 0.2512, 'eval_samples_per_second': 3.98, 'eval_steps_per_second': 3.98, 'epoch': 1.0}
+[2026-11-03T20:59:59+08:00] [stderr] 
+[2026-11-03T20:59:59+08:00] [stderr] 100%|████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.33it/s]
+[2026-11-03T20:59:59+08:00] [stderr] 
+[2026-11-03T20:59:59+08:00] [stderr] Training completed. Do not forget to share your model on huggingface.co/models =)
+[2026-11-03T20:59:59+08:00] [stderr] 
+[2026-11-03T20:59:59+08:00] [stderr] 
+[2026-11-03T20:59:59+08:00] [stdout] [Metrics] {"train_runtime": 1.084, "train_samples_per_second": 0.923, "train_steps_per_second": 0.923, "total_flos": 115433681879040.0, "train_loss": 0.6931471824645996, "epoch": 1.0, "stage": "dpo", "step": 1}
+[2026-11-03T20:59:59+08:00] [stderr] 
+[2026-11-03T20:59:59+08:00] [stderr]                                                                                                    
+[2026-11-03T20:59:59+08:00] [stdout] {'train_runtime': 1.084, 'train_samples_per_second': 0.923, 'train_steps_per_second': 0.923, 'train_loss': 0.6931471824645996, 'epoch': 1.0}
+[2026-11-03T20:59:59+08:00] [stderr] 
+[2026-11-03T20:59:59+08:00] [stderr] 100%|████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.33it/s][dpo] Training ends: epoch=1.0, step=1
+[2026-11-03T20:59:59+08:00] [stderr] 
+[2026-11-03T20:59:59+08:00] [stderr] 100%|████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.08s/it]
+[2026-11-03T20:59:59+08:00] [stderr] Saving model checkpoint to /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo/final
+[2026-11-03T21:00:00+08:00] [stderr] loading configuration file /data/chaoni/zzy/Qwen2.5-7B/config.json
+[2026-11-03T21:00:00+08:00] [stderr] Model config Qwen2Config {
+[2026-11-03T21:00:00+08:00] [stderr]   "architectures": [
+[2026-11-03T21:00:00+08:00] [stderr]     "Qwen2ForCausalLM"
+[2026-11-03T21:00:00+08:00] [stderr]   ],
+[2026-11-03T21:00:00+08:00] [stderr]   "attention_dropout": 0.0,
+[2026-11-03T21:00:00+08:00] [stderr]   "bos_token_id": 151643,
+[2026-11-03T21:00:00+08:00] [stderr]   "dtype": "bfloat16",
+[2026-11-03T21:00:00+08:00] [stderr]   "eos_token_id": 151643,
+[2026-11-03T21:00:00+08:00] [stderr]   "hidden_act": "silu",
+[2026-11-03T21:00:00+08:00] [stderr]   "hidden_size": 3584,
+[2026-11-03T21:00:00+08:00] [stderr]   "initializer_range": 0.02,
+[2026-11-03T21:00:00+08:00] [stderr]   "intermediate_size": 18944,
+[2026-11-03T21:00:00+08:00] [stderr]   "layer_types": [
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention",
+[2026-11-03T21:00:00+08:00] [stderr]     "full_attention"
+[2026-11-03T21:00:00+08:00] [stderr]   ],
+[2026-11-03T21:00:00+08:00] [stderr]   "max_position_embeddings": 32768,
+[2026-11-03T21:00:00+08:00] [stderr]   "max_window_layers": 28,
+[2026-11-03T21:00:00+08:00] [stderr]   "model_type": "qwen2",
+[2026-11-03T21:00:00+08:00] [stderr]   "num_attention_heads": 28,
+[2026-11-03T21:00:00+08:00] [stderr]   "num_hidden_layers": 28,
+[2026-11-03T21:00:00+08:00] [stderr]   "num_key_value_heads": 4,
+[2026-11-03T21:00:00+08:00] [stderr]   "rms_norm_eps": 1e-06,
+[2026-11-03T21:00:00+08:00] [stderr]   "rope_scaling": null,
+[2026-11-03T21:00:00+08:00] [stderr]   "rope_theta": 1000000.0,
+[2026-11-03T21:00:00+08:00] [stderr]   "sliding_window": null,
+[2026-11-03T21:00:00+08:00] [stderr]   "tie_word_embeddings": false,
+[2026-11-03T21:00:00+08:00] [stderr]   "transformers_version": "4.57.6",
+[2026-11-03T21:00:00+08:00] [stderr]   "use_cache": true,
+[2026-11-03T21:00:00+08:00] [stderr]   "use_sliding_window": false,
+[2026-11-03T21:00:00+08:00] [stderr]   "vocab_size": 152064
+[2026-11-03T21:00:00+08:00] [stderr] }
+[2026-11-03T21:00:00+08:00] [stderr] 
+[2026-11-03T21:00:00+08:00] [stderr] chat template saved in /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo/final/chat_template.jinja
+[2026-11-03T21:00:00+08:00] [stderr] tokenizer config file saved in /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo/final/tokenizer_config.json
+[2026-11-03T21:00:00+08:00] [stderr] Special tokens file saved in /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo/final/special_tokens_map.json
+[2026-11-03T21:00:00+08:00] [stdout] [dpo] Final adapter and tokenizer saved: /data/chaoni/zzy/ACL-Low/model_out/qwen2.5-7b-demo/dpo/final
+[2026-11-03T21:00:00+08:00] [stdout] [Stage] DPO completed
+[2026-11-03T21:00:00+08:00] [stdout] All stages completed.
+[2026-11-03T21:00:00+08:00] [stdout] [Run] Completed successfully
